@@ -415,3 +415,56 @@ img {
     font-size: 11px;
     padding-bottom: 5px;
 }
+
+
+.carousel {
+    position: relative;
+}
+
+.carousel__roll {
+    display: flex;
+    min-height: 320px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    z-index: 1;
+}
+
+.carousel__arrow {
+    font-size: 72px;
+    position: absolute;
+    top: calc(50% - 41px);
+    cursor: pointer;
+    user-select: none;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.carousel__arrow-left {
+    left: 0;
+}
+
+.carousel__arrow-right {
+    right: 0;
+}
+
+.carousel__roll::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.carousel__slide:nth-child(1) {
+    background: #fffed7;
+}
+
+.carousel__slide:nth-child(2) {
+    background: #d7ffd7;
+}
+
+.carousel__slide:nth-child(3) {
+    background: #ead7ff;
+}
