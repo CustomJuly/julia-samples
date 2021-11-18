@@ -22,7 +22,10 @@ img {
     justify-content: space-between;
     padding-bottom: 10px;
     padding-top: 30px;
-
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 9;
    }
 
 .logo-header {
@@ -92,6 +95,7 @@ img {
     width: 100%;
     position: relative;
     overflow: hidden;
+    padding-top: 69px;
 }
 
 .header-foreground {
