@@ -167,7 +167,7 @@
     Связаться с нами
   </h2>
   <div class="footer-write-us">
-    <div class="footer-write-us-email">
+    <div class="footer-write-us-callback">
       <input
         id="first-name"
         type="text"
@@ -176,17 +176,22 @@
       >
       <input
         id="user-email"
-        type="text"
+        type="email"
         placeholder="Ваш e-mail"
         title="Ваш e-mail"
       >
       <input
+        id="user-phone"
+        type="tel"
+        placeholder="Ваш телефон"
+        title="Ваш телефон"
+      >
+      <textarea
         id="message"
-        type="text"
         placeholder="Сообщение"
         title="Сообщение"
-      >
-      <button id="submit-btn" disabled>
+      ></textarea>
+      <button id="submit-btn">
         Отправить
       </button>
     </div>
@@ -206,5 +211,6 @@
 </div>
 
 <script src="carousel.js"></script>
+<script src="callback.js"></script>
 </body>
 </html>
