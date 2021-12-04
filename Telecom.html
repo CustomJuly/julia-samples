@@ -13,7 +13,7 @@
 <header class="index-header">
     <div class="header-top">
         <div class="logo-header">
-            <img src="photos/logo.png" alt="Крит Телеком">
+            <img src="svg/logo.svg" alt="Крит Телеком">
         </div>
         <nav class="header-menu-right">
             <a href="/">Главная</a>
@@ -233,36 +233,62 @@
     </h2>
     <div class="footer-write-us">
         <div class="footer-write-us-callback">
-            <input
-                id="first-name"
-                type="text"
-                placeholder="Ваше имя"
-                title="Ваше имя"
-            >
-            <input
-                id="user-email"
-                type="email"
-                placeholder="Ваш e-mail"
-                title="Ваш e-mail"
-            >
-            <input
-                id="user-phone"
-                type="tel"
-                placeholder="Ваш телефон"
-                title="Ваш телефон"
-            >
+            <div class="input-wrapper">
+                <img
+                  src="svg/avatar.svg"
+                  alt="avatar"
+                  class="input-icon"
+                >
+                <input
+                  id="first-name"
+                  type="text"
+                  placeholder="Ваше имя"
+                  title="Ваше имя"
+                >
+            </div>
+
+            <div class="input-wrapper">
+                <img
+                  src="svg/email.svg"
+                  alt="avatar"
+                  class="input-icon"
+                >
+                <input
+                  id="user-email"
+                  type="email"
+                  placeholder="Ваш e-mail"
+                  title="Ваш e-mail"
+                >
+            </div>
+
+            <div class="input-wrapper">
+                <img
+                  src="svg/phone.svg"
+                  alt="avatar"
+                  class="input-icon"
+                >
+                <input
+                  id="user-phone"
+                  type="tel"
+                  placeholder="Ваш телефон"
+                  title="Ваш телефон"
+                >
+            </div>
+
             <textarea
                 id="message"
                 placeholder="Сообщение"
                 title="Сообщение"
             ></textarea>
+
             <button id="submit-btn">
                 Отправить
             </button>
         </div>
 
         <div class="call-us-telegram-us">
-            <div class="call-us">Позвоните нам
+            <div class="call-us">
+                Позвоните нам
             </div>
 
             <span><a href=”tel:+79998887766”>+7(999)888-77-66</a></span>
