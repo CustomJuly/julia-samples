@@ -122,6 +122,16 @@ img {
     position: relative;
 }
 
+.orange-circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0%;
+    right: -100px;
+}
+
 .header-text-on-the-background {
     display: flex;
     flex-direction: column;
