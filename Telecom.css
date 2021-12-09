@@ -113,6 +113,24 @@ img {
 .header-background {
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.header-text-on-the-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 165px;
+    right: 20px;
+    height: 150px;
+}
+
+.header-text-on-the-background div {
+    top: 260px;
+    right: 50px;
+    font-weight: 900;
+    font-size: 26px;
 }
 
 .header-background img {
