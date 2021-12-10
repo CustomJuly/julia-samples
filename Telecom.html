@@ -14,39 +14,37 @@
 <body>
 
 <header class="index-header">
-  <div class="header-top">
-    <div class="logo-header">
-      <img src="svg/logo.svg" alt="Крит Телеком">
-    </div>
-    <nav class="header-menu-right">
-      <a href="/">Главная</a>
-      <a href="/">Преимущества</a>
-      <a href="/">Вопросы</a>
-      <a href="/">Услуги</a>
-      <a href="/">Контакты</a>
-    </nav>
-  </div>
-  <div class="header-bottom">
-    <div class="header-background">
-      <img
-        src="photos/maybe5.jpg"
-        alt="Illustration"
-      >
-      <div class="orange-circle">
-        <div class="header-text-on-the-background">
-          <div> Максимум сервиса </div>
-          <div> минимум дополнительных </div>
-          <div> финансовых вложений </div>
-        </div>
-      </div>
-
+  <div class="header-wrapper">
+    <div class="header-top">
+      <a href="/" class="logo-header">
+        <img src="svg/logo.svg" alt="Крит Телеком" draggable="false">
+      </a>
+      <nav class="header-menu-right">
+        <a href="/">Главная</a>
+        <a href="/">Преимущества</a>
+        <a href="/">Вопросы</a>
+        <a href="/">Услуги</a>
+        <a href="/">Контакты</a>
+      </nav>
     </div>
   </div>
 </header>
 
-<div>
-  <hr class="line">
-</div>
+<section class="section">
+  <div class="header-bottom">
+    <img
+      src="photos/maybe5.jpg"
+      alt="Illustration"
+    >
+    <div class="orange-circle">
+      <div class="header-text-on-the-circle">
+        <div>Максимум сервиса</div>
+        <div>минимум дополнительных</div>
+        <div>финансовых вложений</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <!--    block element modifier -->
@@ -119,37 +117,25 @@
       ‹
     </div>
     <div id="roll" class="carousel__roll">
-
       <div class="carousel__slide">
-
-        <div class="carousel-text">Готовы рекомендовать компанию Крит Телеком, так как это позволяет избежать
+        <div class="carousel-text">
+          Готовы рекомендовать компанию Крит Телеком, так как это позволяет избежать
           значительных затрат на междугороднюю связь.
         </div>
         <div class="carousel-company-logo">
-          <div><img src="photos/logoMagenta.png">
-          </div>
-          <div class="carousel-company">Magenta Technology
-          </div>
+          <img src="photos/logoMagenta.png" draggable="false">
         </div>
-
       </div>
 
       <div class="carousel__slide">
-
         <div class="carousel-text">
           В результате работы с компанией Крит Телеком мы довольны не только качеством
           услуг, но и технической поддержкой и готовностью нашего персонального менеджера оперативно предоставлять
           все необходимые консультации.
         </div>
         <div class="carousel-company-logo">
-          <div>
-            <img src="photos/logoViva.png">
-          </div>
-          <div class="carousel-company">
-            Viva Land
-          </div>
+          <img src="photos/logoViva.png" draggable="false">
         </div>
-
       </div>
 
       <div class="carousel__slide">
@@ -159,12 +145,7 @@
           клиента.
         </div>
         <div class="carousel-company-logo">
-          <div class="div">
-            <img src="photos/logoChacone.png" height="100" width="289" />
-          </div>
-          <div class="carousel-company">
-            Чакона
-          </div>
+          <img src="photos/logoChacone.png" draggable="false">
         </div>
       </div>
 
@@ -174,12 +155,7 @@
           основные плюсы: стабильность работы и быстрое реагирование службы технической поддержки.
         </div>
         <div class="carousel-company-logo">
-          <div>
-            <img src="photos/logoRadio.png" height="100" width="289" />
-          </div>
-          <div class="carousel-company">
-            Выбери Радио
-          </div>
+          <img src="photos/logoRadio.png" draggable="false">
         </div>
       </div>
     </div>
@@ -187,8 +163,7 @@
     <div
       id="right-btn"
       class="carousel__arrow carousel__arrow-right"
-    >
-      ›
+    >›
     </div>
   </div>
 </div>
@@ -197,70 +172,72 @@
   <hr class="line">
 </div>
 
-<div class="questions">
-  <h2 class="heading">Частые вопросы</h2>
+
+<div class="section">
+  <h2 class="heading">
+    <span class="heading__text">
+            <span class="heading__dot heading__dot--tl"></span>
+            <span class="heading__dot heading__dot--tr"></span>
+            <span class="heading__dot heading__dot--br"></span>
+            <span class="heading__dot heading__dot--bl"></span>
+            Популярные
+            <span class="heading__highlight">вопросы</span>
+    </span>
+  </h2>
   <div class="demo">
-    <input
-      class="questions-items"
-      id="question-1"
-      type="checkbox"
-    >
-    <label for="question-1">Виртуальная АТС поддерживает BLF?
-      <a id="1" class="plus">
-        <span>+</span>
-      </a>
-    </label>
-    <div class="main-answer">
-      <div class="answer">
-        <p>
-          <img
-            src="photos/tube.png"
-            width="150"
-            height="180"
-            alt="Трубка"
-          >
+    <div class="questions-block">
+      <input
+        class="questions-items"
+        id="question-1"
+        type="checkbox"
+      >
+      <label for="question-1">Виртуальная АТС поддерживает BLF?
+        <a id="1" class="plus">
+          <span>+</span>
+        </a>
+      </label>
+      <div class="main-answer">
+        <div class="answer">
           Да. Максимальное количество отслеживаемых линий не должно превышать 20.
-        </p>
+        </div>
       </div>
     </div>
 
-    <input
-      class="questions-items"
-      id="question-2"
-      type="checkbox"
-    >
-    <label for="question-2">Какое оборудование требуется для работы ВАТС?
-      <a id="2" class="plus">
-        <span>+</span>
-      </a>
-    </label>
-    <div class="main-answer">
-      <div class="answer">
-        <p>
-          <img
-            src="photos/tube.png"
-            width="150"
-            height="180"
-            alt="Трубка"
-          >
-          Виртуальная АТС (ВАТС) — это «умная» телефонная связь через интернет и полноценная замена
-          физической офисной
-          мини-АТС. И для ее подключения не нужно проводить ремонтные работы, тянуть провода, покупать
-          и настраивать
-          аппаратуру.
-          Все оборудование, которое необходимо для обеспечения качественной телефонии, находится у
-          нас. Его настройкой и
-          обслуживанием занимаются специалисты МТТ.
-        </p>
-
+    <div class="questions-block">
+      <input
+        class="questions-items"
+        id="question-2"
+        type="checkbox"
+      >
+      <label for="question-2">Какое оборудование требуется для работы ВАТС?
+        <a id="2" class="plus">
+          <span>+</span>
+        </a>
+      </label>
+      <div class="main-answer">
+        <div class="answer">
+          Виртуальная АТС (ВАТС) — это «умная» телефонная связь через интернет и полноценная замена физической офисной
+          мини-АТС. И для ее подключения не нужно проводить ремонтные работы, тянуть провода, покупать и настраивать
+          аппаратуру. Все оборудование, которое необходимо для обеспечения качественной телефонии, находится у нас.
+          Его настройкой и обслуживанием занимаются специалисты МТТ.
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 <hr class="line">
-<div class="footer-all">
+
+<div class="section">
   <h2 class="heading">
-    Связаться с нами
+    <span class="heading__text">
+            <span class="heading__dot heading__dot--tl"></span>
+            <span class="heading__dot heading__dot--tr"></span>
+            <span class="heading__dot heading__dot--br"></span>
+            <span class="heading__dot heading__dot--bl"></span>
+            <span class="heading__highlight">Связаться</span>
+            с нами
+    </span>
   </h2>
   <div class="footer-write-us">
     <div class="footer-write-us-callback">
@@ -329,16 +306,19 @@
       </div>
     </div>
   </div>
-  <hr class="line">
-  <div class="footer-contacts">
-    <div>+7 (846) 226-63-63</div>
-    <div>г. Самара, ул. Гагарина, 96А</div>
-    <div>voip@krit.ru</div>
-  </div>
-  <div class="footer-logo">
-    2001-2021
-  </div>
 </div>
+
+<hr class="line">
+
+<div class="footer-contacts">
+  <div>+7 (846) 226-63-63</div>
+  <div>г. Самара, ул. Гагарина, 96А</div>
+  <div>voip@krit.ru</div>
+</div>
+<div class="footer-logo">
+  2001-2021
+</div>
+
 
 <script src="carousel.js"></script>
 <script src="callback.js"></script>
