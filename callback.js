@@ -4,6 +4,7 @@ const nameInput = document.getElementById('first-name')
 const emailInput = document.getElementById('user-email')
 const phoneInput = document.getElementById('user-phone')
 const messageInput = document.getElementById('message')
+const arrow = document.getElementById('arrow-left')
 
 submitBtn.addEventListener('click', function () {
   const name = nameInput.value
@@ -29,6 +30,10 @@ submitBtn.addEventListener('click', function () {
   } else {
     console.log('ошибочка', xhr.status)
   }
+})
+
+arrow.addEventListener('click', function () {
+  nameInput.focus()
 })
 
 // GET POST PUT/PATCH DELETE

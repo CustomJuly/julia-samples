@@ -10,6 +10,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="Telecom.css">
+  <link href="favicon.png" rel="icon" type="image/png" />
 </head>
 <body>
 
@@ -96,6 +97,50 @@
   <hr class="line">
 </div>
 
+<section class="section">
+  <div class="counters">
+    <div class="counter">
+      <div class="counter__value-container">
+        <div class="counter__value">
+          <span id="counter-companies">0</span>
+        </div>
+      </div>
+      <div class="counter__label-container">
+        <div class="counter__label">
+          компании пользуются нашими услугами
+        </div>
+      </div>
+    </div>
+    <div class="counter">
+      <div class="counter__value-container">
+        <div class="counter__value">
+          <span>14</span>
+        </div>
+      </div>
+      <div class="counter__label-container">
+        <div class="counter__label">
+          лет успешной работы
+        </div>
+      </div>
+    </div>
+    <div class="counter">
+      <div class="counter__value-container">
+        <div class="counter__value">
+          <span>30%</span>
+        </div>
+      </div>
+      <div class="counter__label-container">
+        <div class="counter__label">
+          рынка услуг связи в г.Самара в первый год работы
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div>
+  <hr class="line">
+</div>
 
 <div class="section">
   <h2 class="heading">
@@ -192,8 +237,9 @@
         type="checkbox"
       >
       <label for="question-1">Виртуальная АТС поддерживает BLF?
-        <a id="1" class="plus">
-          <span>+</span>
+        <a id="1" class="sign">
+          <span class="sign--plus">+</span>
+          <span class="sign--minus">–</span>
         </a>
       </label>
       <div class="main-answer">
@@ -210,8 +256,9 @@
         type="checkbox"
       >
       <label for="question-2">Какое оборудование требуется для работы ВАТС?
-        <a id="2" class="plus">
-          <span>+</span>
+        <a id="2" class="sign">
+          <span class="sign--plus">+</span>
+          <span class="sign--minus">–</span>
         </a>
       </label>
       <div class="main-answer">
@@ -228,7 +275,7 @@
 
 <hr class="line">
 
-<div class="section">
+<section class="section">
   <h2 class="heading">
     <span class="heading__text">
             <span class="heading__dot heading__dot--tl"></span>
@@ -239,88 +286,126 @@
             с нами
     </span>
   </h2>
-  <div class="footer-write-us">
-    <div class="footer-write-us-callback">
-      <div class="input-wrapper">
-        <img
-          src="svg/avatar.svg"
-          alt="avatar"
-          class="input-icon"
-        >
-        <input
-          id="first-name"
-          type="text"
-          placeholder="Ваше имя"
-          title="Ваше имя"
-        >
+  <div class="contact-us">
+    <div class="contact-us__column contact-us__feedback-container">
+      <div class="contact-us__form">
+        <div class="input-wrapper">
+          <img
+            src="svg/avatar.svg"
+            alt="avatar"
+            class="input-icon"
+          >
+          <input
+            id="first-name"
+            type="text"
+            placeholder="Ваше имя"
+            title="Ваше имя"
+          >
+        </div>
+        <div class="input-wrapper">
+          <img
+            src="svg/email.svg"
+            alt="avatar"
+            class="input-icon"
+          >
+          <input
+            id="user-email"
+            type="email"
+            placeholder="Ваш e-mail"
+            title="Ваш e-mail"
+          >
+        </div>
+        <div class="input-wrapper">
+          <img
+            src="svg/phone.svg"
+            alt="avatar"
+            class="input-icon"
+          >
+          <input
+            id="user-phone"
+            type="tel"
+            placeholder="Ваш телефон"
+            title="Ваш телефон"
+          >
+        </div>
+        <textarea
+          id="message"
+          placeholder="Сообщение"
+          title="Сообщение"
+        ></textarea>
+        <button id="submit-btn">
+          Отправить
+        </button>
       </div>
-
-      <div class="input-wrapper">
-        <img
-          src="svg/email.svg"
-          alt="avatar"
-          class="input-icon"
-        >
-        <input
-          id="user-email"
-          type="email"
-          placeholder="Ваш e-mail"
-          title="Ваш e-mail"
-        >
-      </div>
-
-      <div class="input-wrapper">
-        <img
-          src="svg/phone.svg"
-          alt="avatar"
-          class="input-icon"
-        >
-        <input
-          id="user-phone"
-          type="tel"
-          placeholder="Ваш телефон"
-          title="Ваш телефон"
-        >
-      </div>
-
-      <textarea
-        id="message"
-        placeholder="Сообщение"
-        title="Сообщение"
-      ></textarea>
-
-      <button id="submit-btn">
-        Отправить
-      </button>
     </div>
+    <div class="contact-us__column contact-us__contacts">
+      <div class="contact-us__contacts-wrapper">
+        <div class="contact-us__call-us">
+          ✏️ Заполните форму обратного звонка и мы свяжемся с Вами в ближайшее время.
+          <img
+            id="arrow-left"
+            src="svg/arrow-left.svg"
+            alt="Arrow left"
+            class="contact-us__arrow-left"
+          >
+          🤙 Или Вы можете позвонить нам по указанному ниже номеру
+        </div>
 
-    <div class="call-us-telegram-us">
-      <div class="call-us">
-        Позвоните нам
-      </div>
+        <a
+          href="tel:+78462266363"
+          class="contact-us__phone"
+        >
+          <span>+7 (846) 226-63-63</span>
+        </a>
 
-      <span><a href=”tel:+79998887766”>+7(999)888-77-66</a></span>
-
-      <div class="footer-write-us-telegram">
-        Телеграм
+        <div class="contact-us__telegram">
+          а ещё мы есть в
+          <a
+            href="https://t.me/julykogut"
+            target="_blank"
+            class="contact-us__telegram-link"
+          >
+            Telegram
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<hr class="line">
+<section class="section">
+  <div class="ymap">
+    <iframe
+      src="https://yandex.ru/map-widget/v1/-/CCUyIMhlPC"
+      class="ymap__iframe"
+    ></iframe>
+  </div>
+</section>
 
-<div class="footer-contacts">
-  <div>+7 (846) 226-63-63</div>
-  <div>г. Самара, ул. Гагарина, 96А</div>
-  <div>voip@krit.ru</div>
-</div>
-<div class="footer-logo">
-  2001-2021
-</div>
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__contacts">
+      <div>
+        <a href="tel:+78462266363">+7 (846) 226-63-63</a>
+      </div>
+      <div>
+        <a href="https://yandex.ru/maps/-/CCUyIMXh3D" target="_blank">
+          г. Самара, ул. Гагарина, 96А
+        </a>
+      </div>
+      <div>
+        <a href="mailto:voip@krit.ru">voip@krit.ru</a>
+      </div>
+    </div>
+    <div class="footer__years">
+      Группа компаний КРИТ © 2001 – <span id="year"></span>
+    </div>
+  </div
+</footer>
 
 
 <script src="carousel.js"></script>
 <script src="callback.js"></script>
+<script src="ui.js"></script>
 </body>
 </html>
