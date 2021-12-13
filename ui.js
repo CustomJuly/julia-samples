@@ -3,29 +3,39 @@ const currentDate = new Date()
 const currentYear = currentDate.getFullYear()
 yearContainer.innerText = currentYear.toString()
 
-const counterCompanies = document.getElementById('counter-companies')
+function startAnimation(insertInto, maxValue, updateTimeMs) {
+  // const insertInto = принимаю значение из параметра №1
+  let currentCompanies = 0
+  const animationDurationMs = 1000
 
-let currentCompanies = 0
-const companiesMax = 1783
+  const rounded = Math.round(maxValue / (animationDurationMs / updateTimeMs))
+  const step = rounded || 1
 
-const animationDurationMs = 1000
-const updateTimeMs = 10
+  function startCompaniesCounter() {
+    if (currentCompanies >= maxValue) {
+      return
+    }
 
-const step = Math.round(companiesMax / (animationDurationMs / updateTimeMs)) || 1
-
-function startCompaniesCounter() {
-  if (currentCompanies < companiesMax) {
-    if (currentCompanies + step >= companiesMax) {
-      currentCompanies = companiesMax
+    if (currentCompanies + step >= maxValue) {
+      currentCompanies = maxValue
 
       // останавливаем временной цикл "setInterval"
       clearInterval(intervalId)
     } else {
       currentCompanies = currentCompanies + step
     }
-    counterCompanies.innerText = currentCompanies.toString()
+    insertInto.innerText = currentCompanies.toString()
   }
-}
 
 // запускаем цикл setInterval – он запускает функцию startCompaniesCounter через каждый updateTimeMs миллисекунд
-const intervalId = setInterval(startCompaniesCounter, updateTimeMs)
+  const intervalId = setInterval(startCompaniesCounter, updateTimeMs)
+}
+
+const counterCompanies = document.getElementById('counter-companies')
+const counterSuccess = document.getElementById('counter-success')
+const counterPercentage = document.getElementById('counter-percentage')
+
+// успешной работы = текущий (2021) – год открытия (2001)
+startAnimation(counterCompanies, 500, 10)
+startAnimation(counterSuccess, currentYear - 2001, 50)
+startAnimation(counterPercentage, 30, 30)
