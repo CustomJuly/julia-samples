@@ -721,6 +721,7 @@ img {
     padding: 0 60px;
     z-index: 2;
     color: var(--color-accent);
+    user-select: none;
 }
 
 .carousel:hover .carousel-company-logo img {
