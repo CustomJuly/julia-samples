@@ -94,6 +94,13 @@ img {
     width: 100%;
 }
 
+#main-link:before {
+    display: block;
+    content: "";
+    height: 55px;
+    margin: -55px 0 0;
+}
+
 .line {
     border: none;
     background: linear-gradient(to left, rgba(88, 140, 253, 0) 3%, #becae38f 50%, rgba(88, 140, 253, 0) 97%);
@@ -716,6 +723,10 @@ img {
     color: var(--color-accent);
 }
 
+.carousel:hover .carousel-company-logo img {
+    filter: grayscale(0);
+}
+
 .carousel__arrow-left {
     left: 0;
 }
@@ -782,6 +793,6 @@ img {
     transition: filter 250ms linear;
 }
 
-.carousel__slide:hover .carousel-company-logo img {
-    filter: grayscale(0);
-}
+/*.carousel__slide:hover .carousel-company-logo img {*/
+/*    filter: grayscale(0);*/
+/*}*/
