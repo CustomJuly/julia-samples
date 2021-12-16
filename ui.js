@@ -35,7 +35,34 @@ const counterCompanies = document.getElementById('counter-companies')
 const counterSuccess = document.getElementById('counter-success')
 const counterPercentage = document.getElementById('counter-percentage')
 
-// успешной работы = текущий (2021) – год открытия (2001)
-startAnimation(counterCompanies, 500, 10)
-startAnimation(counterSuccess, currentYear - 2001, 50)
-startAnimation(counterPercentage, 30, 30)
+let wasRun = false
+
+function testCallback(entries) {
+  const ratio = entries[0].intersectionRatio
+
+  if (ratio >= 0.8 && wasRun === false) {
+    startAnimation(counterCompanies, 1783, 10)
+
+    setTimeout(function () {
+      startAnimation(counterSuccess, currentYear - 2001, 50)
+    }, 500)
+
+    setTimeout(function () {
+      startAnimation(counterPercentage, 30, 30)
+    }, 1000)
+    wasRun = true
+  }
+
+  if (wasRun) {
+    observer.disconnect()
+  }
+}
+
+const observer = new IntersectionObserver(testCallback, {
+  root: null,
+  threshold: 0.8
+})
+
+const target = document.getElementById('counters')
+observer.observe(target)
+
