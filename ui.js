@@ -31,38 +31,49 @@ function startAnimation(insertInto, maxValue, updateTimeMs) {
   const intervalId = setInterval(startCompaniesCounter, updateTimeMs)
 }
 
-const counterCompanies = document.getElementById('counter-companies')
-const counterSuccess = document.getElementById('counter-success')
-const counterPercentage = document.getElementById('counter-percentage')
 
-let wasRun = false
-
-function testCallback(entries) {
-  const ratio = entries[0].intersectionRatio
-
-  if (ratio >= 0.8 && wasRun === false) {
-    startAnimation(counterCompanies, 1783, 10)
-
-    setTimeout(function () {
-      startAnimation(counterSuccess, currentYear - 2001, 50)
-    }, 500)
-
-    setTimeout(function () {
-      startAnimation(counterPercentage, 30, 30)
-    }, 1000)
-    wasRun = true
-  }
-
-  if (wasRun) {
-    observer.disconnect()
+let observables = {
+  'counter-companies': {
+    target: document.getElementById('counter-companies'),
+    wasRun: false,
+    maxValue: 1783,
+    updateTimeMs: 10
+  },
+  'counter-success': {
+    target: document.getElementById('counter-success'),
+    wasRun: false,
+    maxValue: currentYear - 2001,
+    updateTimeMs: 50
+  },
+  'counter-percentage': {
+    target: document.getElementById('counter-percentage'),
+    wasRun: false,
+    maxValue: 30,
+    updateTimeMs: 30
   }
 }
 
-const observer = new IntersectionObserver(testCallback, {
+
+function onIntersect(entries) {
+  for (let entry of entries) {
+    const id = entry.target.id
+    if (entry.intersectionRatio === 1 && !observables[id].wasRun) {
+      startAnimation(entry.target, observables[id].maxValue, observables[id].updateTimeMs)
+      observables[id].wasRun = true
+    }
+    if (observables[id].wasRun) {
+      observer.unobserve(entry.target)
+      // observer.unobserve(observables[id].target)
+    }
+    // сборщик мусора тут
+  }
+}
+
+const observer = new IntersectionObserver(onIntersect, {
   root: null,
-  threshold: 0.8
+  threshold: 1
 })
 
-const target = document.getElementById('counters')
-observer.observe(target)
-
+observer.observe(observables['counter-companies'].target)
+observer.observe(observables['counter-success'].target)
+observer.observe(observables['counter-percentage'].target)
