@@ -887,7 +887,7 @@ img {
 
 .carousel__roll {
     display: flex;
-    min-height: 500px;
+    min-height: 520px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-snap-stop: always;
@@ -909,16 +909,36 @@ img {
     user-select: none;
 }
 
-.carousel:hover .carousel-company-logo img {
-    filter: grayscale(0);
-}
-
 .carousel__arrow-left {
     left: 0;
 }
 
 .carousel__arrow-right {
     right: 0;
+}
+
+.carousel-timer {
+    position: absolute;
+    top: 60px;
+    left: calc(50% - 76px);
+    display: flex;
+    z-index: 2;
+}
+
+.carousel-timer__stick {
+    width: 32px;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.carousel-timer__stick:last-child {
+    margin-right: 0;
+}
+
+.carousel-timer__stick.active {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .carousel__roll::-webkit-scrollbar {
@@ -932,7 +952,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 60px 80px;
+    padding: 70px 20px;
     background: white;
     box-shadow: var(--card-shadow);
     border-radius: 40px;
@@ -947,7 +967,7 @@ img {
 .carousel-text {
     letter-spacing: 0.3px;
     line-height: 1.6;
-    padding: 0 80px;
+    max-width: 600px;
     font-size: 20px;
     text-align: center;
 }
@@ -967,7 +987,6 @@ img {
     bottom: 74px;
     display: flex;
     justify-content: center;
-    width: calc(100% - 160px);
     height: 70px;
 }
 
@@ -975,10 +994,40 @@ img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: grayscale(1);
     transition: filter 250ms linear;
 }
 
-/*.carousel__slide:hover .carousel-company-logo img {*/
-/*    filter: grayscale(0);*/
-/*}*/
+@media (max-width: 575px) {
+    .carousel-text {
+        font-size: 16px;
+    }
+
+    .carousel-company-logo {
+        height: 50px;
+        bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .carousel-company-logo {
+        bottom: 40px;
+    }
+}
+
+/* Когда заходим с компа (курсор доступен) */
+@media (hover: hover) {
+    .carousel-company-logo img {
+        filter: grayscale(1);
+    }
+
+    .carousel:hover .carousel-company-logo img {
+        filter: grayscale(0);
+    }
+}
+
+/* Когда заходим с тач-устройств */
+@media (hover: none) {
+    .carousel__arrow {
+        display: none;
+    }
+}

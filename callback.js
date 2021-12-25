@@ -14,7 +14,7 @@ submitBtn.addEventListener('click', function () {
 
   const xhr = new XMLHttpRequest()
 
-  xhr.open('POST', 'https://5b413d3bc91d2c115696b0f4276c58e5.m.pipedream.net', false)
+  xhr.open('POST', 'https://41edfbd036a94ccf0bdb5bd838877948.m.pipedream.net', false)
   xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
 
   const body = {
@@ -24,11 +24,14 @@ submitBtn.addEventListener('click', function () {
     message: message
   }
 
-  xhr.send(JSON.stringify(body))
+  const jsonStr = JSON.stringify(body)
+
+  submitBtn.setAttribute('disabled', 'disabled')
+  xhr.send(jsonStr)
   if (xhr.status === 200) {
-    console.log('результат', xhr.response)
+    submitBtn.innerText = 'Отправлено'
   } else {
-    console.log('ошибочка', xhr.status)
+    submitBtn.innerText = 'Ошибка'
   }
 })
 

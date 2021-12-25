@@ -2,6 +2,11 @@ const roll = document.getElementById('roll')
 const leftBtn = document.getElementById('left-btn')
 const rightBtn = document.getElementById('right-btn')
 
+const carousel = document.getElementById('carousel')
+// массив (а если точнее – List)
+const slides = document.querySelectorAll('.carousel__slide')
+const sticks = document.querySelectorAll('.carousel-timer__stick')
+
 function isFirstSlide() {
   return roll.scrollLeft === 0
 }
@@ -37,3 +42,34 @@ function goNext() {
 
 leftBtn.addEventListener('click', goPrevious)
 rightBtn.addEventListener('click', goNext)
+
+function onSlidesObserve(entries) {
+  for (let entry of entries) {
+    const child = entry.target
+    const parent = child.parentNode
+    const children = parent.children
+    const index = Array.prototype.indexOf.call(children, child)
+
+    if (entry.intersectionRatio >= 0.5) {
+      sticks[index].classList.add('active')
+    } else {
+      sticks[index].classList.remove('active')
+    }
+  }
+}
+
+
+const slidesObserver = new IntersectionObserver(onSlidesObserve, {
+  root: carousel,
+  threshold: 0.5
+})
+
+// for (let slide of slides) {
+//   slidesObserver.observe(slide)
+// }
+
+function observe(slide) {
+  slidesObserver.observe(slide)
+}
+
+slides.forEach(observe)
