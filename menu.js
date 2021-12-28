@@ -21,10 +21,29 @@ handle.addEventListener('click', function () {
   }
 })
 
-
 for (let anchor of anchors) {
-  function onLinkClick(event) {
-    event.preventDefault()
+  // function onLinkClick(ev) {
+  //   ev.preventDefault()
+  //   console.log('BEFORE')
+  //   const blockID = anchor.getAttribute('href').substr(1)
+  //   const target = document.getElementById(blockID)
+  //
+  //   window.scrollTo({
+  //     top: target.offsetTop - 100,
+  //     behavior: 'smooth'
+  //   })
+  //
+  //   /*
+  //   Не сильно оптимизировано, потому что мобильная менюшка будет "закрываться"
+  //   даже если мы используем только десктопную менюшку
+  //   * */
+  //   menu.classList.remove('opened') // закрываем менюшку
+  //   handle.classList.remove('opened') // из крестика в гамбургер
+  // }
+
+  // стрелочная функция – не создаёт свой контекст
+  const onLinkClick = (ev) => {
+    ev.preventDefault()
     const blockID = anchor.getAttribute('href').substr(1)
     const target = document.getElementById(blockID)
 
