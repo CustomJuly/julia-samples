@@ -397,7 +397,8 @@ img {
 }
 
 /*Large devices (desktops, less than 1200px)*/
-@media screen and (min-width: 992px) and (max-width: 1199px) {}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
 
 .advantages-cell {
     text-align: center;
@@ -804,6 +805,58 @@ img {
     }
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay.opened {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+    background: white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    max-width: 800px;
+    padding: 40px;
+}
+
+.modal__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.modal h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.modal img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.modal__close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 24px;
+    user-select: none;
+    cursor: pointer;
+    padding: 4px 12px;
+}
+
 .footer {
     background: var(--color-primary);
 }
@@ -839,19 +892,23 @@ img {
 }
 
 .footer__contacts > * {
-    flex: 1;
+    /*flex: 1;*/
     text-align: center;
+    border-bottom: 1px solid black;
 }
 
 .footer__contacts a {
     text-decoration: none;
     color: var(--card-shadow);
     padding-bottom: 4px;
-    border-bottom: 1px solid black;
 }
 
 .footer__contacts a:after {
 
+}
+
+.footer__licence {
+    cursor: pointer;
 }
 
 .footer__years {
