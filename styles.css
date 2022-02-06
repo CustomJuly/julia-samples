@@ -383,13 +383,11 @@ img {
 }
 
 .about-company {
-    /*display: flex;*/
-    /*flex-direction: column;*/
 }
 
 .about-company__img-wrapper {
     width: 80%;
-    margin: 0 auto 60px;
+    margin: 0 auto;
     position: relative;
     z-index: -1;
     user-select: none;
@@ -409,14 +407,13 @@ img {
 
 .about-company__description {
     position: relative;
-    margin-top: -100px;
+    margin-top: -40px;
     padding-left: 48px;
     flex: 1;
     letter-spacing: -0.5px;
     line-height: 36px;
     font-size: 20px;
     text-align: left;
-    z-index: 100;
 }
 
 .about-company__description::before {
@@ -443,7 +440,6 @@ img {
     height: 16px;
     border-radius: 8px;
     border: 3px solid #f9f9f9;
-    /*box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);*/
 }
 
 .about-company__p:first-child::before {
@@ -465,6 +461,33 @@ img {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 60px;
+}
+
+@media (max-width: 575px) {
+    .about-company__img-wrapper {
+        width: 100%;
+    }
+
+    .about-company__img-wrapper::after {
+        height: 20px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, rgba(249, 249, 249, 1) 90%);
+    }
+
+    .about-company__description {
+        margin-top: 20px;
+        padding-left: 20px;
+        line-height: 32px;
+        font-size: 18px;
+    }
+
+    .about-company__p::before {
+        left: -26px;
+    }
+
+    .about-ate {
+        line-height: 32px;
+        font-size: 18px;
+    }
 }
 
 .advantages {
