@@ -15,7 +15,7 @@ function isLastSlide() {
   const scrollWidth = roll.scrollWidth
   const lastSlidePosition = scrollWidth - roll.offsetWidth
   const currentX = roll.scrollLeft
-  return currentX === lastSlidePosition
+  return Math.abs(currentX - lastSlidePosition) <= 5
 }
 
 function goPrevious() {
