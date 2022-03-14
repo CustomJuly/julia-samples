@@ -64,10 +64,6 @@ const slidesObserver = new IntersectionObserver(onSlidesObserve, {
   threshold: 0.5
 })
 
-// for (let slide of slides) {
-//   slidesObserver.observe(slide)
-// }
-
 function observe(slide) {
   slidesObserver.observe(slide)
 }

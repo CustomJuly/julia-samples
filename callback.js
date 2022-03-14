@@ -39,8 +39,3 @@ arrow.addEventListener('click', function () {
   nameInput.focus()
 })
 
-// GET POST PUT/PATCH DELETE
-// 200+ // всё ок
-// 300+ // редирект
-// 400+ // ошибки со стороны клиента
-// 500+ // ошибки сервера
